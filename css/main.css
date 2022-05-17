@@ -1,0 +1,419 @@
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('../assets/fonts/Montserrat/Montserrat-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('../assets/fonts/Montserrat/Montserrat-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('../assets/fonts/Montserrat/Montserrat-Italic.ttf') format('ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px; /*better*/
+    font-size: 18px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    width: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.wrapper h2 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.green-python {
+    color: rgb(90, 202, 90);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.493);
+}
+/* 
+.scroll-fix::before {
+    content: '';
+    display: block;
+    height: 10px;
+    margin-top: -10px;
+} */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.7);
+    z-index: 10;
+    transition: transform .25s ease, background-color .4s;
+    z-index: 10;
+}
+
+.navbar ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+}
+
+.navbar-mobile-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: rgba(0,0,0,.6);
+    padding: 0.1em 0.3em;
+    border: none;
+    cursor: pointer;
+    z-index: 12;
+    transition: opacity .4s;
+}
+
+.navbar-mobile-btn:hover {
+    opacity: .8;
+}
+
+.navbar ol li a {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0.6em 1.5em;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color .4s;
+}
+
+.navbar ol li a::before {
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    display: block;
+    width: 5px;
+    height: 10px;
+    content: '';
+    background-color: rgb(90, 202, 90);
+    transition: left .4s;
+}
+
+.navbar ol li a:hover::before {
+    left: 97%;
+}
+
+.navbar ol li a:hover {
+    outline-color: black;
+    background-color: rgba(0, 0, 0, 0.493);
+}
+
+.navbar ol li a::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 10px;
+    height: 5px;
+    content: '';
+    background-color: rgb(90, 202, 90);
+    transition: width .4s;
+}
+
+.navbar ol li a:hover::after {
+    width: 100%;
+}
+
+.navbar-open {
+    transform: translate(-100vw);
+}
+
+.navbar-visible {
+    background-color: #43a047 !important;
+}
+
+#intro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    max-height: 780px;
+    min-height: 600px;
+    text-align: center;
+    background-image: url('../assets/images/code-1839406_1280.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+#intro .hero-shadow {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.6);
+    z-index: -1;
+}
+
+#intro h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding: 0 1em;
+    line-height: 45px;
+}
+
+#intro .wrapper p {
+    color: #ffffff;
+    padding: 1em;
+    font-size: 1.3rem;
+}
+
+#intro .wrapper .socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none;
+    transform: scale(1.2);
+}
+
+#intro .wrapper .socials li a {
+    text-decoration: none;
+    color: #ffffff;
+    opacity: .75;
+    transition: opacity .4s;
+}
+
+#intro .wrapper .socials li a:hover {
+    opacity: 1;
+}
+
+#lessons h2 {
+    padding: 1.5em 1em 1.3em 1em;
+    font-size: 1.4rem;
+    line-height: 35px;
+    color: #369136;
+    text-align: center;
+}
+
+#lessons .menu-tabs {
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+#lessons .menu-tabs-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0.5em 1.5em;
+}
+
+#lessons .menu-tabs-btns .btn {
+    font-size: inherit;
+    padding: 0.7em 1em;
+    background: none;
+    border: 2px solid #35a135;
+    outline: 2px solid #35a135;
+    color: #35a135;
+    font-variant: small-caps;
+    font-weight: bold;
+    outline-offset: -2px;
+    transition: outline-offset .3s ease;
+    cursor: pointer;
+}
+
+#lessons .menu-tabs-btns .btn:focus, #lessons .menu-tabs-btns .btn:hover {
+    outline-offset: -8px;
+}
+
+#lessons .menu-tabs-btns .btn-active {
+    background-color: #43a047;
+    color: #fff;
+    outline-offset: 2px;
+    outline-color: #fff;
+}
+
+#lessons .menu-tabs-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin: 1.5em auto 3em auto;
+}
+
+#lessons .menu-tabs-content .card {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    min-height: 224px;
+    border: 2px solid green;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.7);
+}
+
+#lessons .menu-tabs-content .card img {
+    display: block;
+    width: 100%;
+    height: 110px;
+    object-position: center;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#lessons .menu-tabs-content .card h4 {
+    margin: 0.7em;
+    text-transform: uppercase;
+    color: #205f20;
+}
+
+#lessons .menu-tabs-content .card a {
+    display: inline-block;
+    margin: 0 0 0.8em 0;
+    padding: 0.4em 0.6em;
+    border: 2px solid green;
+    outline: 2px solid green;
+    outline-offset: -2px;
+    font-variant: small-caps;
+    text-decoration: none;
+    color: green;
+    transition: outline-offset .3s ease, outline-width .3s ease;
+}
+
+#lessons .menu-tabs-content .card a:hover {
+    outline-offset: -7px;
+    outline-width: 6px;
+}
+
+#exercises {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    padding: 1em;
+    color: #fff;
+    background-image: url('../assets/images/snake-3979601_1920.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: end;
+    line-height: 40px;
+    z-index: 1;
+}
+
+#exercises .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    width: 80%;
+    height: 100%;
+}
+
+#exercises .hero-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    z-index: -1;
+}
+
+#exercises .wrapper a {
+    color: #7bec7b;
+    text-decoration: none;
+    margin: 0 0.4em;
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+    transition: outline-offset .3s ease, color .3s ease;
+}
+
+#exercises .wrapper a:hover, #exercises .wrapper a:focus {
+    outline-offset: -2px;
+    color: #fff;
+}
+
+#download {
+    width: 100%;
+    height: 250px;
+}
+
+#download h2 {
+    padding: 1.5em 1em 1.3em 1em;
+    font-size: 1.4rem;
+    line-height: 35px;
+    color: #369136;
+    text-align: center;
+}
+
+#download h5 {
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#download .platforms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#download .platforms a {
+    position: relative;
+    text-decoration: none;
+    color: green;
+    padding: 1em;
+    transform: scale(1.2);
+}
+
+#download .platforms a:hover, 
+#download .platforms a:focus {
+    opacity: .9;
+    transform: scale(1.2);
+}
+
+footer {
+    padding: 1em 0 1.3em 0;
+    background-color:#144d16;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer span {
+    display: inline-block;
+    transform: translateY(5px);
+}
